@@ -90,6 +90,7 @@ section.card {
   padding: 0.5rem;
   min-height: 300px;
   height: auto;
+  position: relative;
 }
 
 section.card.to-do > * {
@@ -149,8 +150,17 @@ form input#add-input::placeholder {
 .strikeline {
   text-decoration: line-through;
 }
+.deleteAll {
+  position: absolute;
+  bottom: 1rem;
+  width: 90%;
+  transform: translateX(1rem);
+}
 
 @media only screen and (max-width: 640px) {
+  label {
+    display: none;
+  }
   .data.profile > * {
     font-size: small;
   }
@@ -163,5 +173,26 @@ form input#add-input::placeholder {
   }
   form input#add-input {
     width: 100%;
+  }
+  .deleteAll {
+    width: 90%;
+    transform: translateX(0.1rem);
+  }
+  .list {
+    font-size: small;
+    padding: 0.2rem 0.1rem;
+  }
+  .tombols {
+    font-size: small;
+    gap: 0.2rem;
+  }
+  .tombols button {
+    padding: 0.05rem;
+  }
+  select#levels {
+    width: 50%;
+  }
+  button.send {
+    width: 47%;
   }
 }

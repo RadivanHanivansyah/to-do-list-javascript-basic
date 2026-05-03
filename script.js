@@ -4,6 +4,7 @@ const selectLevels = document.getElementById( 'levels' )
 const dataTodo = document.querySelector( '.data.to-do' );
 const dataDone = document.querySelector( '.data.done' );
 const dataDate = document.querySelector( '.date' );
+const deleteAll = document.querySelectorAll( '.deleteAll' );
 const data = []
 
 const date = new Date();
@@ -28,6 +29,9 @@ form.addEventListener( 'submit', ( event ) => {
     const checklist = document.createElement( 'input' );
     checklist.setAttribute( 'type', 'checkbox' )
     checklist.addEventListener( 'click', () => strikeOut() );
+    deleteAll.forEach( ( item ) => {
+        return item.addEventListener( 'click', () => list.style.display = "none" );
+    } )
     const buttonDel = document.createElement( 'button' )
     buttonDel.textContent = "hapus";
     buttonDel.addEventListener( 'click', () => del() );
@@ -37,6 +41,7 @@ form.addEventListener( 'submit', ( event ) => {
     list.appendChild( listText );
     list.appendChild( containerTombols );
     dataTodo.appendChild( list );
+    dataInput.value = "";
 
     function strikeOut() {
         listText.classList.toggle( 'strikeline' );

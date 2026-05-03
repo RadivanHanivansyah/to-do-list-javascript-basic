@@ -134,11 +134,20 @@ form input#add-input::placeholder {
 }
 .list {
   border: 1px solid black;
-  padding: 0.2rem;
-  width: fit-content;
+  padding: 0.4rem;
+  width: 100%;
   margin-bottom: 1rem;
   list-style: none;
   border-radius: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.tombols {
+  display: flex;
+  gap: 0.5rem;
+}
+.strikeline {
+  text-decoration: line-through;
 }
 
 @media only screen and (max-width: 640px) {
